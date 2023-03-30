@@ -3,11 +3,14 @@
 <head>
 	<title>Name My Pet</title>
 	<style>
+
 		body {
 			font-family: Arial, sans-serif;
 			margin: 0;
 			padding: 0;
+			background-color:black;
 		}
+
 
 		h1 {
 			text-align: center;
@@ -41,7 +44,7 @@
 	</style>
 </head>
 <body>
-	<h1>click on the Cat or Dog pic to generate a name</h1>
+	<h1 style="color:white;">click on the Cat or Dog pic to generate a name</h1>
 	<div class="container">
 		<div class="cat animal" onclick="generateCatName()">
 			<img src="cat.png" alt="Cat">
@@ -50,7 +53,7 @@
 			<img src="dog.png" alt="Dog">
 		</div>
 	</div>
-	<div class="name" id="name"></div>
+	<div style="color:white;"class="name" id="name"></div>
 
 	<script>
 		// Array of cat names
