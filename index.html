@@ -1,7 +1,127 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title>Cat and Dog Name Generator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		.animal {
+			height: 400px;
+			margin: 0 50px;
+			cursor: pointer;
+		}
+
+		.animal img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		.name {
+			font-size: 36px;
+			font-weight: bold;
+			margin-top: 50px;
+			text-align: center;
+		}
+	</style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	<h1>Cat and Dog Name Generator</h1>
+	<div class="container">
+		<div class="cat animal" onclick="generateCatName()">
+			<img src="cat.png" alt="Cat">
+		</div>
+		<div class="dog animal" onclick="generateDogName()">
+			<img src="dog.png" alt="Dog">
+		</div>
+	</div>
+	<div class="name" id="name"></div>
+
+	<script>
+		// Array of cat names
+		const catNames = [
+			"Fluffy",
+			"Mittens",
+			"Whiskers",
+			"Socks",
+			"Luna",
+			"Simba",
+			"Gizmo",
+			"Tiger",
+			"Boots",
+			"Oliver",
+			"Shadow",
+			"Max",
+			"Lucy",
+			"Kitty",
+			"Milo",
+			"Coco",
+			"Charlie",
+			"Oscar",
+			"Jasper",
+			"Bella",
+			"Garfield",
+			"Leo",
+			"Smokey",
+			"Salem"
+		];
+
+		// Array of dog names
+		const dogNames = [
+			"Buddy",
+			"Max",
+			"Charlie",
+			"Rocky",
+			"Bailey",
+			"Cooper",
+			"Daisy",
+			"Lucy",
+			"Molly",
+			"Sadie",
+			"Lola",
+			"Zoe",
+			"Jack",
+			"Toby",
+			"Coco",
+			"Zeus",
+			"Sam",
+			"Bear",
+			"Riley",
+			"Rosie",
+			"Harley",
+			"Ruby",
+			"Thor",
+			"Lily"
+		];
+
+		// Function to generate a random cat name
+		function generateCatName() {
+			const index = Math.floor(Math.random() * catNames.length);
+			const name = catNames[index];
+			document.getElementById("name").textContent = `Cat name: ${name}`;
+		}
+
+		// Function to generate a random dog name
+		function generateDogName() {
+			const index = Math.floor(Math.random() * dogNames.length);
+			const name = dogNames[index];
+			document.getElementById("name").textContent = `Dog name: ${name}`;
+		}
+	</script>
 </body>
 </html>
