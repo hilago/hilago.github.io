@@ -1,72 +1,130 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>השאר פרטים ונחזור אליך</title>
-    <style>
-        body {
-            background-image: url("picpic.png");
-            background-size: cover;
-            background-position: center;
-        }
-        #form {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            margin: 0 auto;
-            margin-top: 100px;
-        }
-        #form input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #form input[type="submit"]:hover {
-            background-color: #3e8e41;
-        }
-        #thank-you {
-            font-size: 72px;
-            text-align: center;
-            margin-top: 200px;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-    </style>
+	<title>Name My Pet</title>
+	<style>
+
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color:black;
+		}
+
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 50vh;
+		}
+
+		.animal {
+			height: 400px;
+			margin: 0 50px;
+			cursor: pointer;
+		}
+
+		.animal img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		.name {
+			font-size: 36px;
+			font-weight: bold;
+			margin-top: 50px;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-    <h1 style="text-align:center; font-size:36px; margin-top:50px;">השאר פרטים ונחזור אליך</h1>
-    <div id="form">
-        <form method="post" action="submit.php">
-            <label for="name">שם מלא:</label><br>
-            <input type="text" id="name" name="name" required minlength="2"><br>
-            <label for="phone">מספר טלפון:</label><br>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}"><br>
-            <label for="email">כתובת דואר אלקטרוני:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <input type="submit" value="שלח">
-        </form>
-    </div>
-    <div id="thank-you" style="display:none">תודה רבה!</div>
-    <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const data = new FormData(form);
-            fetch(form.action, {
-                method: form.method,
-                body: data
-            })
-            .then(() => {
-                form.style.display = "none";
-                document.getElementById("thank-you").style.display = "block";
-            });
-        });
-    </script>
+	<h1 style="color:white;">click on the Cat or Dog pic to generate a name</h1>
+	<div class="container">
+		<div class="cat animal" onclick="generateCatName()">
+			<img src="cat.png" alt="Cat">
+		</div>
+		<div class="dog animal" onclick="generateDogName()">
+			<img src="dog.png" alt="Dog">
+		</div>
+	</div>
+	<div style="color:white;"class="name" id="name"></div>
+
+	<script>
+		// Array of cat names
+		const catNames = [
+			"Fluffy",
+			"Mittens",
+			"Whiskers",
+			"Socks",
+			"Luna",
+			"Simba",
+			"Gizmo",
+			"Tiger",
+			"Boots",
+			"Oliver",
+			"Shadow",
+			"Max",
+			"Lucy",
+			"Kitty",
+			"Milo",
+			"Coco",
+			"Charlie",
+			"Oscar",
+			"Jasper",
+			"Bella",
+			"Garfield",
+			"Leo",
+			"Smokey",
+			"Salem"
+		];
+
+		// Array of dog names
+		const dogNames = [
+			"Buddy",
+			"Max",
+			"Charlie",
+			"Rocky",
+			"Bailey",
+			"Cooper",
+			"Daisy",
+			"Lucy",
+			"Molly",
+			"Sadie",
+			"Lola",
+			"Zoe",
+			"Jack",
+			"Toby",
+			"Coco",
+			"Zeus",
+			"Sam",
+			"Bear",
+			"Riley",
+			"Rosie",
+			"Harley",
+			"Ruby",
+			"Thor",
+			"Lily"
+		];
+
+		// Function to generate a random cat name
+		function generateCatName() {
+			const index = Math.floor(Math.random() * catNames.length);
+			const name = catNames[index];
+			document.getElementById("name").textContent = `Cat name: ${name}`;
+		}
+
+		// Function to generate a random dog name
+		function generateDogName() {
+			const index = Math.floor(Math.random() * dogNames.length);
+			const name = dogNames[index];
+			document.getElementById("name").textContent = `Dog name: ${name}`;
+		}
+	</script>
 </body>
-</html
+</html>
