@@ -1,130 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Name My Pet</title>
-	<style>
+    <title>Name My Pet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:black;
+        }
 
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color:black;
-		}
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+        }
 
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
 
-		h1 {
-			text-align: center;
-			margin-top: 50px;
-		}
+        .animal {
+            height: 400px;
+            margin: 0 20px;
+            cursor: pointer;
+            width: 50%;
+            max-width: 300px;
+            flex: 1;
+        }
 
-		.container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 50vh;
-		}
+        .animal img {
+            max-height: 100%;
+            max-width: 100%;
+        }
 
-		.animal {
-			height: 400px;
-			margin: 0 50px;
-			cursor: pointer;
-		}
-
-		.animal img {
-			max-height: 100%;
-			max-width: 100%;
-		}
-
-		.name {
-			font-size: 36px;
-			font-weight: bold;
-			margin-top: 50px;
-			text-align: center;
-		}
-	</style>
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 50px;
+            text-align: center;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-	<h1 style="color:white;">click on the Cat or Dog pic to generate a name</h1>
-	<div class="container">
-		<div class="cat animal" onclick="generateCatName()">
-			<img src="cat.png" alt="Cat">
-		</div>
-		<div class="dog animal" onclick="generateDogName()">
-			<img src="dog.png" alt="Dog">
-		</div>
-	</div>
-	<div style="color:white;"class="name" id="name"></div>
+    <h1>Click on the Cat or Dog picture to generate a name</h1>
+    <div class="container">
+        <div class="cat animal" onclick="generateCatName()">
+            <img src="cat.png" alt="Cat">
+        </div>
+        <div class="dog animal" onclick="generateDogName()">
+            <img src="dog.png" alt="Dog">
+        </div>
+    </div>
+    <div class="name" id="name"></div>
 
-	<script>
-		// Array of cat names
-		const catNames = [
-			"Fluffy",
-			"Mittens",
-			"Whiskers",
-			"Socks",
-			"Luna",
-			"Simba",
-			"Gizmo",
-			"Tiger",
-			"Boots",
-			"Oliver",
-			"Shadow",
-			"Max",
-			"Lucy",
-			"Kitty",
-			"Milo",
-			"Coco",
-			"Charlie",
-			"Oscar",
-			"Jasper",
-			"Bella",
-			"Garfield",
-			"Leo",
-			"Smokey",
-			"Salem"
-		];
+    <script>
+        // Array of cat names
+        const catNames = [
+            "Fluffy",
+            "Mittens",
+            "Whiskers",
+            "Socks",
+            "Luna",
+            "Simba",
+            "Gizmo",
+            "Tiger",
+            "Boots",
+            "Oliver",
+            "Shadow",
+            "Max",
+            "Lucy",
+            "Kitty",
+            "Milo",
+            "Coco",
+            "Charlie",
+            "Oscar",
+            "Jasper",
+            "Bella",
+            "Garfield",
+            "Leo",
+            "Smokey",
+            "Salem"
+        ];
 
-		// Array of dog names
-		const dogNames = [
-			"Buddy",
-			"Max",
-			"Charlie",
-			"Rocky",
-			"Bailey",
-			"Cooper",
-			"Daisy",
-			"Lucy",
-			"Molly",
-			"Sadie",
-			"Lola",
-			"Zoe",
-			"Jack",
-			"Toby",
-			"Coco",
-			"Zeus",
-			"Sam",
-			"Bear",
-			"Riley",
-			"Rosie",
-			"Harley",
-			"Ruby",
-			"Thor",
-			"Lily"
-		];
+        // Array of dog names
+        const dogNames = [
+            "Buddy",
+            "Max",
+            "Charlie",
+            "Rocky",
+            "Bailey",
+            "Cooper",
+            "Daisy",
+            "Lucy",
+            "Molly",
+            "Sadie",
+            "Lola",
+            "Zoe",
+            "Jack",
+            "Toby",
+            "Coco",
+            "Zeus",
+            "Sam",
+            "Bear",
+            "Riley",
+            "Rosie",
+            "Harley",
+            "Ruby",
+            "Thor",
+            "Lily"
+        ];
 
-		// Function to generate a random cat name
-		function generateCatName() {
-			const index = Math.floor(Math.random() * catNames.length);
-			const name = catNames[index];
-			document.getElementById("name").textContent = `Cat name: ${name}`;
-		}
+        // Function to generate a random cat name
+        function generateCatName() {
+            const index = Math.floor(Math.random() * catNames.length);
+            const name = catNames[index];
+            document.getElementById("name").textContent = `Cat name: ${name}`;
+        }
 
-		// Function to generate a random dog name
-		function generateDogName() {
-			const index = Math.floor(Math.random() * dogNames.length);
-			const name = dogNames[index];
-			document.getElementById("name").textContent = `Dog name: ${name}`;
-		}
-	</script>
+        // Function to generate a random dog name
+        function generateDogName() {
+            const index = Math.floor(Math.random() * dogNames.length);
+            const name = dogNames[index];
+            document.getElementById("name").textContent = `Dog name: ${name}`;
+        }
+    </script>
 </body>
 </html>
